@@ -1,24 +1,28 @@
 === WooFramework Branding ===
-Contributors:
-Donate link:
-Tags:
+Contributors: woothemes,mattyza
+Donate link: http://woothemes.com/
+Tags: wooframework, branding, settings
 Requires at least: 3.9
 Tested up to: 3.9
 Stable tag: 1.0.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Hey there! I'm your new starter plugin.
+Rebrand the WooFramework.
 
 == Description ==
 
-Hey there! I'm your new starter plugin.
+Using WooFramework Branding, it's possible to rebrand WooFramework version 6 or higher with your own logo, admin menu icon and menu label.
 
-Looking for a helping hand? [View plugin documentation](http://domain.com/).
+Looking for a helping hand? [View plugin documentation](http://docs.woothemes.com/document/wooframework-branding/).
 
 == Usage ==
 
-Place some text here, explaining how to use this plugin. Keep it clear and easy to read (short sentences).
+Once activated, a "Tweaks" menu item will display underneath the WooThemes administration menu. If you're not using a WooThemes theme, this menu will display under the "Appearance" menu item.
+
+Visiting this screen will display a table of settings for customising the logo, admin menu icon and admin menu label.
+
+Once done, click the "Save Changes" button, to save and apply your settings.
 
 == Installation ==
 
@@ -27,13 +31,13 @@ Installing "WooFramework Branding" can be done either by searching for "WooFrame
 1. Download the plugin via WordPress.org.
 1. Upload the ZIP file through the "Plugins > Add New > Upload" screen in your WordPress dashboard.
 1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Visit the settings screen and configure, as desired.
+1. Visit the "WooThemes > Tweaks" (or "Appearance > Tweaks") section and configure the settings, as desired.
 
 == Frequently Asked Questions ==
 
 = How do I contribute? =
 
-We encourage everyone to contribute their ideas, thoughts and code snippets. This can be done by forking the [repository over at GitHub](http://github.com/mattyza/wooframework-branding/).
+We encourage everyone to contribute their ideas, thoughts and code snippets. This can be done by forking the [repository over at GitHub](http://github.com/woothemes/wooframework-branding/).
 
 == Screenshots ==
 
@@ -43,11 +47,11 @@ We encourage everyone to contribute their ideas, thoughts and code snippets. Thi
 == Upgrade Notice ==
 
 = 1.0.0 =
-* 2014-04-23
+* 2014-05-13
 * Initial release. Woo!
 
 == Changelog ==
 
 = 1.0.0 =
-* 2014-04-23
+* 2014-05-13
 * Initial release. Woo!
