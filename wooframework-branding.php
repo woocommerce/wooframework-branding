@@ -131,6 +131,9 @@ final class WooFramework_Branding {
 
 			// Maybe override the WooFramework administration menu icon.
 			add_filter( 'wf_branding_icon', array( $this, 'maybe_override_icon_url' ) );
+
+			// Maybe override the WooFramework administration menu label.
+			add_action( 'admin_menu', array( $this, 'maybe_override_admin_menu_label' ) );
 		}
 	} // End init()
 
@@ -298,6 +301,24 @@ final class WooFramework_Branding {
 	} // End maybe_override_icon_url()
 
 	/**
+	 * Maybe override the menu label.
+	 * @access  public
+	 * @since   1.0.0
+	 * @return  array
+	 */
+	public function maybe_override_admin_menu_label () {
+		global $menu;
+		$label = get_option( 'framework_woo_menu_label', '' );
+		if ( '' != $label && 0 < count( (array)$menu ) ) {
+			foreach ( $menu as $k => $v ) {
+				if ( isset( $v[0] ) && isset( $v[2] ) && 'woothemes' == $v[2] ) {
+					$menu[$k][0] = esc_html( $label );
+				}
+			}
+		}
+	} // End maybe_override_admin_menu_label()
+
+	/**
 	 * Return an array of the settings scafolding. The field types, names, etc.
 	 * @access  public
 	 * @since   1.0.0
@@ -314,17 +335,24 @@ final class WooFramework_Branding {
 										),
 				'framework_woo_backend_header_image' => array(
 										'name' => __( 'Your Logo Image', 'wooframework-branding' ),
-										'desc' => __( 'Specify your logo image.', 'wooframework-branding' ),
+										'desc' => __( 'Your logo image, for use on all WooFramework screens.', 'wooframework-branding' ),
 										'std' => '',
 										'id' => 'framework_woo_backend_header_image',
 										'type' => 'upload'
 										),
 				'framework_woo_backend_icon' => array(
 										'name' => __( 'Your Logo Icon', 'wooframework-branding' ),
-										'desc' => __( 'Specify your logo icon, for the WordPress administration menu.', 'wooframework-branding' ),
+										'desc' => __( 'Your logo icon, for the WordPress administration menu.', 'wooframework-branding' ),
 										'std' => '',
 										'id' => 'framework_woo_backend_icon',
 										'type' => 'upload'
+										),
+				'framework_woo_menu_label' => array(
+										'name' => __( 'Admin Menu Label', 'wooframework-branding' ),
+										'desc' => sprintf( __( 'The label of the %1$s administration menu. Leave empty for the default menu label.', 'wooframework-branding' ), wp_get_theme()->__get( 'Name' ) ),
+										'std' => '',
+										'id' => 'framework_woo_menu_label',
+										'type' => 'text'
 										)
 				);
 	} // End get_settings_template()
