@@ -128,6 +128,9 @@ final class WooFramework_Branding {
 			}
 			// Maybe override the WooFramework settings screen logo.
 			add_filter( 'wf_branding_logo', array( $this, 'maybe_override_logo_image_url' ) );
+
+			// Maybe override the WooFramework administration menu icon.
+			add_filter( 'wf_branding_icon', array( $this, 'maybe_override_icon_url' ) );
 		}
 	} // End init()
 
@@ -279,6 +282,20 @@ final class WooFramework_Branding {
 		}
 		return $url;
 	} // End maybe_override_logo_image_url()
+
+	/**
+	 * Maybe override the icon URL.
+	 * @access  public
+	 * @since   1.0.0
+	 * @return  array
+	 */
+	public function maybe_override_icon_url ( $url ) {
+		$image_url = get_option( 'framework_woo_backend_icon', '' );
+		if ( '' != $image_url ) {
+			$url = esc_url( $image_url );
+		}
+		return $url;
+	} // End maybe_override_icon_url()
 
 	/**
 	 * Return an array of the settings scafolding. The field types, names, etc.
