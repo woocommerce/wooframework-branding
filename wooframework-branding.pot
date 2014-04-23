@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WooFramework Branding 1.0.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/wooframework-branding\n"
-"POT-Creation-Date: 2014-04-23 10:56:00+00:00\n"
+"POT-Creation-Date: 2014-04-23 11:58:43+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -12,55 +12,63 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: wooframework-branding.php:146 wooframework-branding.php:293
+#: wooframework-branding.php:152 wooframework-branding.php:331
 msgid "Branding"
 msgstr ""
 
-#: wooframework-branding.php:170
+#: wooframework-branding.php:176
 msgid "It appears your theme does not contain the WooFramework. In order to use the WooFramework Branding, please use a theme which makes use of the WooFramework."
 msgstr ""
 
-#: wooframework-branding.php:174
+#: wooframework-branding.php:180
 msgid "It appears you're using an older version of the WooFramework. WooFramework Branding requires WooFramework 6.0 or higher."
 msgstr ""
 
-#: wooframework-branding.php:202
+#: wooframework-branding.php:208
 msgid "Settings saved."
 msgstr ""
 
-#: wooframework-branding.php:225
+#: wooframework-branding.php:231
 msgid "Configure the branding settings and hit the \"Save Changes\" button. It's as easy as that!"
 msgstr ""
 
-#: wooframework-branding.php:226
+#: wooframework-branding.php:232
 msgid "For more information:"
 msgstr ""
 
-#: wooframework-branding.php:227
+#: wooframework-branding.php:233
 msgid "<a href=\"%s\" target=\"_blank\">WooThemes Help Desk</a>"
 msgstr ""
 
-#: wooframework-branding.php:229
+#: wooframework-branding.php:235
 msgid "Overview"
 msgstr ""
 
-#: wooframework-branding.php:299
+#: wooframework-branding.php:337
 msgid "Your Logo Image"
 msgstr ""
 
-#: wooframework-branding.php:300
-msgid "Specify your logo image."
+#: wooframework-branding.php:338
+msgid "Your logo image, for use on all WooFramework screens."
 msgstr ""
 
-#: wooframework-branding.php:306
+#: wooframework-branding.php:344
 msgid "Your Logo Icon"
 msgstr ""
 
-#: wooframework-branding.php:307
-msgid "Specify your logo icon, for the WordPress administration menu."
+#: wooframework-branding.php:345
+msgid "Your logo icon, for the WordPress administration menu."
 msgstr ""
 
-#: wooframework-branding.php:347 wooframework-branding.php:356
+#: wooframework-branding.php:351
+msgid "Admin Menu Label"
+msgstr ""
+
+#: wooframework-branding.php:352
+msgid "The label of the %1$s administration menu. Leave empty for the default menu label."
+msgstr ""
+
+#: wooframework-branding.php:392 wooframework-branding.php:401
 msgid "Cheatin&#8217; huh?"
 msgstr ""
 #. Plugin Name of the plugin/theme
