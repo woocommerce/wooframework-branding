@@ -147,8 +147,8 @@ final class WooFramework_Branding {
 	 * @return  void
 	 */
 	public function register_screen_id ( $screens ) {
-		if ( ! in_array( 'wf-tweaks', $screens ) ) {
-			$screens[] = 'wf-tweaks';
+		if ( ! in_array( 'wf-branding', $screens ) ) {
+			$screens[] = 'wf-branding';
 		}
 		return $screens;
 	} // End register_screen_id()
