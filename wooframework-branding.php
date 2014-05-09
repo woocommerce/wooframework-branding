@@ -120,6 +120,9 @@ final class WooFramework_Branding {
 			// Register the admin screen.
 			add_action( 'admin_menu', array( $this, 'register_admin_screen' ) );
 
+			// Register the admin screen to be able to load the WooFramework's CSS and other assets.
+			add_filter( 'wf_load_admin_css', array( $this, 'register_screen_id' ) );
+
 			// If applicable, instantiate WF_Fields from the WooFramework.
 			if ( defined( 'THEME_FRAMEWORK' ) && 'woothemes' == constant( 'THEME_FRAMEWORK' ) && class_exists( 'WF_Fields' ) ) {
 				$this->_field_obj = new WF_Fields();
@@ -136,6 +139,19 @@ final class WooFramework_Branding {
 			add_action( 'admin_menu', array( $this, 'maybe_override_admin_menu_label' ) );
 		}
 	} // End init()
+
+	/**
+	 * Register the screen ID with the WooFramework's asset loader.
+	 * @access  public
+	 * @since   1.0.0
+	 * @return  void
+	 */
+	public function register_screen_id ( $screens ) {
+		if ( ! in_array( 'wf-tweaks', $screens ) ) {
+			$screens[] = 'wf-tweaks';
+		}
+		return $screens;
+	} // End register_screen_id()
 
 	/**
 	 * Register the admin screen within WordPress.
