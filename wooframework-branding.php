@@ -6,8 +6,8 @@
  * Version: 1.0.0
  * Author: Matty
  * Author URI: http://woothemes.com/
- * Requires at least: 3.8.3
- * Tested up to: 3.9
+ * Requires at least: 3.9.1
+ * Tested up to: 3.9.1
  *
  * Text Domain: wooframework-branding
  * Domain Path: /languages/
@@ -435,7 +435,7 @@ final class WooFramework_Branding {
 	 */
 	private function _log_version_number () {
 		// Log the version number.
-		update_option( $this->_token . '_version', $this->_version );
+		update_option( $this->token . '-version', $this->version );
 	} // End _log_version_number()
 } // End Class
 ?>
