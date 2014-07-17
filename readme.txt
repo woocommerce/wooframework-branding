@@ -18,7 +18,7 @@ Looking for a helping hand? [View plugin documentation](http://docs.woothemes.co
 
 == Usage ==
 
-Once activated, a "Tweaks" menu item will display underneath the WooThemes administration menu. If you're not using a WooThemes theme, this menu will display under the "Appearance" menu item.
+Once activated, a "Branding" menu item will display underneath the WooThemes administration menu. If you're not using a WooThemes theme, this menu will display under the "Appearance" menu item.
 
 Visiting this screen will display a table of settings for customising the logo, admin menu icon and admin menu label.
 
