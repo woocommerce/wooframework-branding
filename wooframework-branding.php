@@ -3,7 +3,7 @@
  * Plugin Name: WooFramework Branding
  * Plugin URI: http://woothemes.com/products/wooframework-branding/
  * Description: Well, g'day there! Lets work together to rebrand your copy of the WooFramework using your logo, your icon and your brand name.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Matty
  * Author URI: http://woothemes.com/
  * Requires at least: 3.9.1
@@ -99,7 +99,7 @@ final class WooFramework_Branding {
 		$this->token 			= 'wooframework-branding';
 		$this->plugin_url 		= plugin_dir_url( __FILE__ );
 		$this->plugin_path 		= plugin_dir_path( __FILE__ );
-		$this->version 			= '1.0.0';
+		$this->version 			= '1.0.1';
 
 		register_activation_hook( __FILE__, array( $this, 'install' ) );
 
@@ -172,6 +172,9 @@ final class WooFramework_Branding {
 
 		// Add contextual help tabs.
 		add_action( 'load-' . $this->admin_page, array( $this, 'admin_screen_help' ) );
+
+		// Make sure our data is added to the WooFramework settings exporter.
+		add_filter( 'wooframework_export_query_inner', array( $this, 'add_exporter_data' ) );
 
 		// Add admin notices.
 		add_action( 'admin_notices', array( $this, 'admin_notices' ) );
@@ -437,5 +440,26 @@ final class WooFramework_Branding {
 		// Log the version number.
 		update_option( $this->token . '-version', $this->version );
 	} // End _log_version_number()
+
+	/**
+ 	 * Add our saved data to the WooFramework data exporter.
+ 	 * @access  public
+	 * @since   1.0.1
+ 	 * @param   string $data SQL query.
+ 	 * @return  string SQL query.
+ 	 */
+	public function add_exporter_data ( $data ) {
+		$option_keys = array(
+								'framework_woo_last_branding_editor',
+								'framework_woo_backend_header_image',
+								'framework_woo_backend_icon',
+								'framework_woo_menu_label'
+								);
+		foreach ( $option_keys as $key ) {
+			$data .= " OR option_name = '" . $key . "'";
+		} // End For Loop
+		return $data;
+	} // End add_exporter_data()
+
 } // End Class
 ?>
