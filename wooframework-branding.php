@@ -4,10 +4,10 @@
  * Plugin URI: http://woothemes.com/products/wooframework-branding/
  * Description: Well, g'day there! Lets work together to rebrand your copy of the WooFramework using your logo, your icon and your brand name.
  * Version: 1.0.3
- * Author: Matty
+ * Author: Matty, Jeffikus
  * Author URI: http://woothemes.com/
- * Requires at least: 3.9.1
- * Tested up to: 4.1.1
+ * Requires at least: 4.1.1
+ * Tested up to: 4.5.3
  *
  * Text Domain: wooframework-branding
  * Domain Path: /languages/
