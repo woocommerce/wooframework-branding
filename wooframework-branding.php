@@ -3,7 +3,7 @@
  * Plugin Name: WooFramework Branding
  * Plugin URI: http://woothemes.com/products/wooframework-branding/
  * Description: Well, g'day there! Lets work together to rebrand your copy of the WooFramework using your logo, your icon and your brand name.
- * Version: 1.0.2
+ * Version: 1.0.3
  * Author: Matty
  * Author URI: http://woothemes.com/
  * Requires at least: 3.9.1
@@ -134,6 +134,9 @@ final class WooFramework_Branding {
 
 			// Maybe override the WooFramework administration menu icon.
 			add_filter( 'wf_branding_icon', array( $this, 'maybe_override_icon_url' ) );
+
+			// Maybe override the WooFramework login screen logo.
+			add_filter( 'wf_login_logo', array( $this, 'maybe_override_login_image_url' ) );
 
 			// Maybe override the WooFramework administration menu label.
 			add_action( 'admin_menu', array( $this, 'maybe_override_admin_menu_label' ) );
@@ -306,6 +309,20 @@ final class WooFramework_Branding {
 	} // End maybe_override_logo_image_url()
 
 	/**
+	 * Maybe override the login image URL.
+	 * @access  public
+	 * @since   1.0.3
+	 * @return  array
+	 */
+	public function maybe_override_login_image_url ( $url ) {
+		$image_url = get_option( 'framework_woo_custom_login_logo', '' );
+		if ( '' != $image_url ) {
+			$url = esc_url( $image_url );
+		}
+		return $url;
+	} // End maybe_override_login_image_url()
+
+	/**
 	 * Maybe override the icon URL.
 	 * @access  public
 	 * @since   1.0.0
@@ -364,6 +381,13 @@ final class WooFramework_Branding {
 										'desc' => __( 'Your logo icon, for the WordPress administration menu.', 'wooframework-branding' ),
 										'std' => '',
 										'id' => 'framework_woo_backend_icon',
+										'type' => 'upload'
+										),
+				'framework_woo_custom_login_logo' => array(
+										'name' => __( 'Your Login Logo Image', 'wooframework-branding' ),
+										'desc' => __( 'Your logo image, for the WordPress administration login screen.', 'wooframework-branding' ),
+										'std' => '',
+										'id' => 'framework_woo_custom_login_logo',
 										'type' => 'upload'
 										),
 				'framework_woo_menu_label' => array(
@@ -453,6 +477,7 @@ final class WooFramework_Branding {
 								'framework_woo_last_branding_editor',
 								'framework_woo_backend_header_image',
 								'framework_woo_backend_icon',
+								'framework_woo_custom_login_logo',
 								'framework_woo_menu_label'
 								);
 		foreach ( $option_keys as $key ) {
